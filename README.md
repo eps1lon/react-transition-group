@@ -1,4 +1,7 @@
-# react-transition-group [![npm][npm-badge]][npm]
+# react-transition-group-strict [![npm][npm-badge]][npm]
+
+> **ATTENTION!** This is a fork of [reac-transition-group](https://github.com/reactjs/react-transition-group)
+> that enables React.StrictMode compatible usage.
 
 > **ATTENTION!** To address many issues that have come up over the years, the API in v2 is not backwards compatible with the original [`React addon (v1-stable)`](https://github.com/reactjs/react-transition-group/tree/v1-stable).
 >
@@ -23,5 +26,5 @@ git@github.com:reactjs/react-transition-group.git
 
 Then run `npm install` (or `yarn`), and finally `npm run storybook` to start a storybook instance that you can navigate to in your browser to see the examples.
 
-[npm-badge]: https://img.shields.io/npm/v/react-transition-group.svg
-[npm]: https://www.npmjs.org/package/react-transition-group
+[npm-badge]: https://img.shields.io/npm/v/react-transition-group-strict.svg
+[npm]: https://www.npmjs.org/package/react-transition-group-strict

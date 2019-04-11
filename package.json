@@ -1,7 +1,7 @@
 {
-  "name": "react-transition-group",
+  "name": "react-transition-group-strict",
   "version": "2.9.0",
-  "description": "A react component toolset for managing animations",
+  "description": "A strict mode compatible fork of react-transition-group",
   "main": "lib/index.js",
   "scripts": {
     "test": "npm run lint && npm run testonly",
