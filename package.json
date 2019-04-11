@@ -1,6 +1,6 @@
 {
   "name": "react-transition-group-strict",
-  "version": "2.9.0",
+  "version": "3.0.0",
   "description": "A strict mode compatible fork of react-transition-group",
   "main": "lib/index.js",
   "scripts": {
