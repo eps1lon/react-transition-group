@@ -1,3 +1,42 @@
+## [4.0.1](https://github.com/reactjs/react-transition-group/compare/v4.0.0...v4.0.1) (2019-05-09)
+
+
+### Bug Fixes
+
+* issue with dynamically applied classes not being properly removed for reentering items ([#499](https://github.com/reactjs/react-transition-group/issues/499)) ([129cb11](https://github.com/reactjs/react-transition-group/commit/129cb11))
+
+# [4.0.0](https://github.com/reactjs/react-transition-group/compare/v3.0.0...v4.0.0) (2019-04-16)
+
+
+### Features
+
+* support esm via package.json routes ([#488](https://github.com/reactjs/react-transition-group/issues/488)) ([6337bf5](https://github.com/reactjs/react-transition-group/commit/6337bf5)), closes [#77](https://github.com/reactjs/react-transition-group/issues/77)
+
+
+### BREAKING CHANGES
+
+* in environments where esm is supported importing from commonjs requires explicitly adding the `.default` after `require()` when resolving to the esm build
+
+# [3.0.0](https://github.com/reactjs/react-transition-group/compare/v2.9.0...v3.0.0) (2019-04-15)
+
+
+### Features
+
+* use stable context API ([#471](https://github.com/reactjs/react-transition-group/issues/471)) ([aee4901](https://github.com/reactjs/react-transition-group/commit/aee4901)), closes [#429](https://github.com/reactjs/react-transition-group/issues/429)
+
+
+### BREAKING CHANGES
+
+* use new style react context
+
+```diff
+// package.json
+-"react": "^15.0.0",
++"react": "^16.6.0",
+-"react-dom": "^15.0.0", 
++"react-dom": "^16.6.0", 
+```
+
 # [2.9.0](https://github.com/reactjs/react-transition-group/compare/v2.8.0...v2.9.0) (2019-04-06)
 
 

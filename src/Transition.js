@@ -1,7 +1,6 @@
 import * as PropTypes from 'prop-types'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { polyfill } from 'react-lifecycles-compat'
 
 import { timeoutsShape } from './utils/PropTypes'
 import TransitionGroupContext from './TransitionGroupContext'
@@ -45,8 +44,10 @@ export const EXITING = 'exiting'
  * }
  *
  * const transitionStyles = {
- *   entering: { opacity: 0 },
+ *   entering: { opacity: 1 },
  *   entered:  { opacity: 1 },
+ *   exiting:  { opacity: 0 },
+ *   exited:  { opacity: 0 },
  * };
  *
  * const Fade = ({ in: inProp }) => (
@@ -385,7 +386,7 @@ Transition.propTypes = {
   /**
    * A `function` child can be used instead of a React element. This function is
    * called with the current transition status (`'entering'`, `'entered'`,
-   * `'exiting'`, `'exited'`, `'unmounted'`), which can be used to apply context
+   * `'exiting'`, `'exited'`), which can be used to apply context
    * specific props to a component.
    *
    * ```jsx
@@ -557,4 +558,4 @@ Transition.ENTERING = 2
 Transition.ENTERED = 3
 Transition.EXITING = 4
 
-export default polyfill(Transition)
+export default Transition
