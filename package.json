@@ -1,7 +1,7 @@
 {
-  "name": "react-transition-group",
+  "name": "@material-ui/react-transition-group",
   "version": "4.1.1",
-  "description": "A react component toolset for managing animations",
+  "description": "A react strict mode compatible component toolset for managing animations",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "scripts": {
