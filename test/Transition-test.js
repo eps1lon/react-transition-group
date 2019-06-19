@@ -469,4 +469,68 @@ describe('Transition', () => {
       wrapper.setState({ in: false })
     })
   })
+
+  describe('findDOMNode', () => {
+    it('uses ReactDOM.findDOMNode by default', done => {
+      const expectDiv = jest.fn(node => expect(node.nodeName).toEqual('DIV'));
+      const handleExited = () => {
+        expect(expectDiv).toHaveBeenCalled()
+
+        done();
+      }
+
+      const wrapper = mount(
+        <Transition
+          in
+          timeout={10}
+          onExiting={expectDiv}
+          onExited={handleExited}
+        >
+          {status => <div><span>{status}</span></div>}
+        </Transition>
+      );
+
+      wrapper.setProps({ in: false });
+    })
+
+    it('can receive a custom findDOMNode method', done => {
+      class StrictModeTransition extends React.Component {
+        constructor(props) {
+          super(props);
+          this.childRef = React.createRef();
+          this.findDOMNode = this.findDOMNode.bind(this);
+        }
+
+        findDOMNode() {
+          return this.childRef.current;
+        }
+
+        render() {
+          return (
+            <Transition findDOMNode={this.findDOMNode} {...this.props}>
+              {status => <div><span ref={this.childRef}>{status}</span></div>}
+            </Transition>
+          );
+        }
+      }
+
+      const expectSpan = jest.fn(node => expect(node.nodeName).toEqual('SPAN'));
+      const handleExited = () => {
+        expect(expectSpan).toHaveBeenCalled();
+
+        done();
+      }
+
+      const wrapper = mount(
+        <StrictModeTransition
+          in
+          timeout={10}
+          onExiting={expectSpan}
+          onExited={handleExited}
+        />
+      );
+
+      wrapper.setProps({ in: false });
+    })
+  })
 })
